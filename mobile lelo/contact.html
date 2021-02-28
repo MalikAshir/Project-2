@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mobile lelo</title>
+    
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <div class="bgimg">
+         <nav class="bg-dark">
+          <div class="container"> 
+           <div class="row">
+             <div class="col-1">
+         <a href="" class="navbar-brand text-warning font-weight-bolds" > <img src="images/log.jpg" alt="logo" id="logoimg" ></a>
+        </div>  
+
+             <div class="col-4">
+              <h4 class="logo">Mobile Lelo</h4>
+            </div>
+             <div class="col-7 text-right">
+             <div  class="link2">
+             <a href="index.html" class="navbarlink">Home</a>
+             <a href="about.html" class="navbarlink">About Us</a>
+             <a href="service.html" class="navbarlink">Products</a>
+             <a href="#" class="navbarlink">Contact Us</a>
+            </div>  
+         </div>
+         </div>
+         </nav>
+         </div>
+         </div>
+ 
+   <div class="row">
+    <div class="col-6">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <form action="">
+                <h1 align=center>Contact us</h1>
+                <div class="form-group">
+                    <label for="name1" >Name</label>
+                    <input class="form-control bg-transparent text-black" id="name1" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="email1">Email</label>
+                    <input class="form-control bg-transparent text-black" id="email1"  type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Message</label>
+                    <textarea class="form-control bg-transparent text-black" id="msg1" cols="50" rows  ="5"></textarea>
+                </div>
+                <button id="form_btn" type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">Submit</button>
+            </form>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="error"></div><br>
+                            <label for="">Name</label>&nbsp;&nbsp;&nbsp;&nbsp;<output id="name2"></output><br>
+                            <label for="">Email</label>&nbsp;&nbsp;&nbsp;&nbsp;<output id="email2"></output></br>
+                            <label for="">Message</label>&nbsp;&nbsp;&nbsp;&nbsp;<output id="msg2"></output>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="close" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <!-- <button type="button" class="btn btn-primary">Save</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="col-6">
+        <img src="images/conatactpic.jpg" class="im" alt="">
+    </div>
+</div>
+   <!-- Footer -->
+   <footer class="page-footer font-small blue pt-4 bg-dark text-light" >
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+  
+          <!-- Content -->
+          <h5 class="text-uppercase">Mobile lelo</h5>
+          <p>CONTACT :&nbsp;&nbsp;&nbsp; 03113686697</p>
+          <P>EMAIL : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ashirmalik940@gmail.com </P>
+          <p> ADDRESS : &nbsp;&nbsp;&nbsp;Mobile Market Hyderabad sindh</p>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <hr class="clearfix w-100 d-md-none pb-3">
+  
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+  
+          <!-- Links -->
+          <h5 class="text-uppercase">Pages</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a   class="navbarlink"   href="index.html">Home</a>
+            </li>
+            <li>
+              <a  class="navbarlink"  href="about.html">About us</a>
+            </li>
+            <li>
+              <a   class="navbarlink" href="service.html">Products</a>
+            </li>
+            <li>
+              <a   class="navbarlink" href="contact.html">Contact us</a>
+            </li>
+          </ul>
+  
+        </div>
+        <!-- Grid column -->
+  
+      
+      </div>
+      <!-- Grid row -->
+  
+    </div>
+  
+  
+  </footer>
+  
+</body>
+</html>
+
+
+   
+<script src="js/jquery.js.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+$('#form_btn').click(function() {
+    
+    var name1 = $('#name1').val();
+    var email1 = $('#email1').val();
+    var msg1 = $('#msg1').val();
+
+    if (name1=="" || email1=="" || msg1=="") {
+        $('#error').html("<p class='alert alert-danger text-center'>Fields Required !</p>");
+    }
+    else{
+        $('#error').html("<p class='alert alert-success text-center'>Your Comment Has Been Sent !</p>");
+
+        $('#name2').html(name1);
+        $('#email2').html(email1);
+        $('#msg2').html(msg1);
+    }
+});
+
+$('#close').click(function() {
+    $('#error').html("");
+    
+    $('#name1').val("");
+    $('#email1').val("");
+    $('#msg1').val("");
+    $('#name2').val("");
+    $('#email2').val("");
+    $('#msg2').val("");
+});
+});
+   
+
+</script>
+   
+   
+   
+
